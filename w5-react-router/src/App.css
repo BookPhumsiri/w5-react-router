@@ -1,0 +1,403 @@
+/* Global Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f7fa;
+  color: #333;
+}
+
+/* Navigation Bar */
+nav {
+  background-color: #1f2937;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  margin: 0 1.5rem;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #60a5fa;
+}
+
+/* Home Page Styles */
+.home-container {
+  position: relative;
+  padding: 4rem 2rem;
+  text-align: center;
+  min-height: 90vh;
+  background-image: url('https://images.unsplash.com/photo-1593642634315-48f5414c3ad9'); /* Replaceable image */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.home-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.55); /* dark overlay for readability */
+  z-index: 1;
+}
+
+.home-title,
+.home-description,
+.home-button {
+  position: relative;
+  z-index: 2;
+}
+
+.home-title {
+  font-size: 3.5rem;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.home-description {
+  font-size: 1.3rem;
+  color: #e5e7eb;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Optional Button */
+.home-button {
+  margin-top: 2rem;
+  padding: 0.75rem 2rem;
+  background-color: #3b82f6;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.home-button:hover {
+  background-color: #2563eb;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .home-title {
+    font-size: 2rem;
+  }
+
+  .home-description {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+}
+
+/* General styling for the About page */
+.about-container {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+.about-container h1 {
+  color: #007acc; /* a nice blue tech color */
+  margin-bottom: 15px;
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.about-container p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.about-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.about-container ul li {
+  background: #007acc;
+  color: white;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(0, 122, 204, 0.3);
+}
+
+.about-container .highlight {
+  color: #007acc;
+  font-weight: 700;
+}
+
+/* Product page container */
+.product-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #1e1e2f; /* dark techy background */
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  color: #eee;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Product page title */
+.product-container h1 {
+  color: #00baff;
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 2.8rem;
+}
+
+/* Product description */
+.product-container p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Product image styling */
+.product-image {
+  display: block;
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto 15px auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 186, 255, 0.5);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.product-image:hover {
+  transform: scale(1.05);
+}
+
+/* Caption below the image */
+.product-caption {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #00baff;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+}
+
+/* ... รักษาสไตล์ product-container, h1, p ตามเดิม ... */
+
+/* สร้าง grid สำหรับสินค้า */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+/* การ์ดสินค้า */
+.product-card {
+  background: #2a2a3d;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 6px 16px rgba(0, 186, 255, 0.3);
+  color: #eee;
+  text-align: center;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+}
+
+/* รูปสินค้าในการ์ด */
+.product-card .product-image {
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 186, 255, 0.5);
+  margin-bottom: 12px;
+}
+
+/* ชื่อสินค้า */
+.product-card h3 {
+  color: #00baff;
+  margin-bottom: 8px;
+}
+
+/* คำอธิบายสินค้า */
+.product-card p {
+  font-size: 1rem;
+  margin-bottom: 12px;
+  min-height: 45px; /* ทำให้การ์ดขนาดเท่ากัน */
+}
+
+/* คำว่า ให้เลือกซื้อ */
+.product-caption {
+  font-weight: 700;
+  color: #00baff;
+  letter-spacing: 1.2px;
+}
+
+
+
+/* About page container */
+.about-container {
+  max-width: 700px;
+  margin: 50px auto;
+  padding: 40px 35px;
+  background: linear-gradient(120deg, #f9f7f1, #d3e0ea);
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Poppins', sans-serif;
+  color: #3a3a3a;
+}
+
+/* Heading style */
+.about-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 25px;
+  text-align: center;
+  font-weight: 600;
+  color: #176678;
+  letter-spacing: 1.2px;
+}
+
+/* Paragraph style */
+.about-container p {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  color: #4a4a4a;
+}
+
+/* Highlight span */
+.about-container .highlight {
+  font-weight: 700;
+  color: #d96c75;
+  border-bottom: 2px solid #d96c75;
+}
+
+/* List styling */
+.about-container ul {
+  list-style-type: square;
+  padding-left: 22px;
+  margin-bottom: 25px;
+  color: #555;
+}
+
+.about-container ul li {
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .about-container {
+    margin: 30px 15px;
+    padding: 30px 20px;
+  }
+
+  .about-container h1 {
+    font-size: 2rem;
+  }
+}
+
+
+
+
+
+
+
+/* Full-page background for computer store theme */
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: url('https://images.unsplash.com/photo-1518773553398-650c184e0bb3?auto=format&fit=crop&w=1350&q=80') no-repeat center center fixed;
+  background-size: cover;
+  background-color: #121212; /* fallback dark color */
+  color: #e0e0e0;
+}
+
+/* About page container with translucent dark overlay */
+.about-container {
+  max-width: 700px;
+  margin: 60px auto;
+  padding: 40px 35px;
+  background: rgba(18, 18, 18, 0.85); /* dark translucent background */
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
+  color: #f0f0f0;
+  backdrop-filter: blur(8px);
+  border: 1px solid #444;
+}
+
+/* Heading style */
+.about-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 25px;
+  text-align: center;
+  font-weight: 700;
+  color: #00d8ff;
+  letter-spacing: 1.5px;
+  text-shadow: 0 0 10px #00d8ff;
+}
+
+/* Paragraph style */
+.about-container p {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  color: #cfd8dc;
+  text-shadow: 0 0 2px #000;
+}
+
+/* Highlight span */
+.about-container .highlight {
+  font-weight: 700;
+  color: #00ffc8;
+  border-bottom: 2px solid #00ffc8;
+}
+
+/* List styling */
+.about-container ul {
+  list-style-type: square;
+  padding-left: 22px;
+  margin-bottom: 25px;
+  color: #b0bec5;
+}
+
+.about-container ul li {
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+  text-shadow: 0 0 2px #000;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .about-container {
+    margin: 30px 15px;
+    padding: 30px 20px;
+  }
+
+  .about-container h1 {
+    font-size: 2rem;
+  }
+}
+
