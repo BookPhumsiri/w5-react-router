@@ -401,3 +401,273 @@ body, html {
   }
 }
 
+
+.product-container {
+  padding: 20px;
+  font-family: sans-serif;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.product-card {
+  border-radius: 10px;
+  padding: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.product-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.product-price {
+  color: #e91e63;
+  font-weight: bold;
+  margin: 8px 0;
+}
+
+.product-caption {
+  background-color: #1976d2;
+  padding: 6px 12px;
+  border-radius: 6px;
+  margin-top: 8px;
+  display: inline-block;
+}
+
+/* ========== เคลื่อนไหวลิงก์ในเมนู (nav) ========== */
+nav a {
+  margin-right: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background: #1976d2;
+  transition: width 0.3s ease;
+}
+
+nav a:hover {
+  color: #1976d2;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* ========== เคลื่อนไหวการ์ดสินค้าใน .product-card ========== */
+.product-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* ========== เคลื่อนไหวปุ่มหรือคำว่า "ให้เลือกซื้อ" ========== */
+.product-caption {
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.product-caption:hover {
+  background-color: #005bb5;
+  transform: scale(1.05);
+}
+
+/* เคลื่อนไหวการปรากฏของ container */
+.home-container {
+  padding: 40px;
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+  animation: fadeInUp 1s ease-out;
+}
+
+/* แอนิเมชันชื่อเรื่อง */
+.home-title {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  animation: popIn 0.8s ease-out;
+}
+
+/* แอนิเมชันคำอธิบาย */
+.home-description {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 30px;
+  opacity: 0;
+  animation: fadeIn 1.2s ease-in forwards;
+  animation-delay: 0.4s;
+}
+
+/* ปุ่ม hover เคลื่อนไหว */
+.home-button {
+  padding: 12px 24px;
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.home-button:hover {
+  transform: scale(1.08);
+  background-color: #1565c0;
+}
+
+/* Animation Keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.about-container {
+  padding: 40px;
+  max-width: 800px;
+  margin: auto;
+  animation: fadeInUp 1s ease-out;
+}
+
+.about-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  animation: slideInLeft 1s ease-out;
+}
+
+.about-container p,
+.about-container ul {
+  animation: fadeIn 1.5s ease-in;
+}
+
+.about-container ul {
+  list-style: disc inside;
+  margin-left: 20px;
+}
+
+.highlight {
+  color: #1976d2;
+  font-weight: bold;
+  animation: pulse 2s infinite;
+}
+
+/* === Animation Keyframes === */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.7;
+  }
+}
+
+.product-card {
+  border-radius: 10px;
+  padding: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 0.6s ease forwards;
+  opacity: 0;
+}
+
+.product-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.product-container {
+  animation: fadeIn 0.6s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
+

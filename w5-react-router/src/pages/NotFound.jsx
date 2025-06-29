@@ -29,7 +29,8 @@ function NotFound() {
         fontWeight: '600',
         textShadow: '1px 1px 5px rgba(0, 0, 0, 0.6)', // เงาดำเล็กน้อย
       }}>
-        Not Found
+        Not Found<br />
+        "ไม่เจอหน้าที่คุณต้องการจะเข้าครับ"
       </p>
     </div>
   );
